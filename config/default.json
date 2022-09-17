@@ -1,0 +1,4 @@
+{
+    "jwtPrivateKey": "computerdept",
+    "db" : "mongodb://localhost/erp"
+}
