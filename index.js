@@ -10,7 +10,7 @@ const profile=require("./routes/create_profile");
 const bodyParser=require("body-parser");
 var cors = require('cors')
 app.use(cors())
-
+//cors
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
  
