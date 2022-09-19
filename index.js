@@ -8,6 +8,8 @@ const registration=require("./routes/registration");
 const login=require("./routes/login");
 const profile=require("./routes/create_profile");
 const bodyParser=require("body-parser");
+const addpaper=require("./routes/add_paper");
+const getpaper=require("./routes/get_paper");
 var cors = require('cors')
 app.use(cors())
 //cors
@@ -25,7 +27,8 @@ require("./startup/db_connect")();
 app.use("/registration",registration);
 app.use("/login",login);
 app.use("/profile",profile);
-
+app.use("/addpaper",addpaper);
+app.use("/getpaper",getpaper);
 
 var corsOptions = {
   origin: 'http://localhost:3000',

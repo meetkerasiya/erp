@@ -19,7 +19,7 @@ const paperSchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    
+     
     issue:{
         type: String,
         required:true
