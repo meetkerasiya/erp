@@ -22,7 +22,7 @@ router.post("/", cors(corsOptions), async (req, res) => {
   }
   const check = await User.findOne({
     username: req.body.username,
-    password: req.body.password,
+    //password: req.body.password,
   });
   if (check != null) {
     return res.status(201).json({ success: true, msg: "user already exists" });
