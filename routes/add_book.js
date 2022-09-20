@@ -16,7 +16,7 @@ router.post("/", [auth], async (req, res) => {
     req.body.author,
     req.body.co_author,
     req.body.publisher,
-    req.body.isbn
+    req.body.ISBN
   );
   if (err) {
     return res.status(401).send(err.details[0].message);
@@ -42,7 +42,7 @@ router.post("/", [auth], async (req, res) => {
       author: req.body.author,
       co_author: req.body.co_author,
       publisher: req.body.publisher,
-      ISBN: req.body.isbn,
+      ISBN: req.body.ISBN,
     });
     book = await book.save();
     res.status(200).send("Data added successfully");

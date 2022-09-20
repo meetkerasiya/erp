@@ -63,7 +63,7 @@ function validation(
     funding_agency: Joi.string().required(),
     amount: Joi.string().required(),
   });
-  return schema.valiamount({
+  return schema.validate({
     email: username,
     cordinator: cordinator,
     project_title: project_title,

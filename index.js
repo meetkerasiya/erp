@@ -65,7 +65,7 @@ app.use("/getpatent", getpatent);
 app.use("/addphd", addphd);
 app.use("/getphd", getphd);
 app.use("/addrnd", addrnd);
-app.use("/gerrnd", getrnd);
+app.use("/getrnd", getrnd);
 app.use("/addtour", addtour);
 app.use("/gettour", gettour);
 app.use("/addwork", addwork);

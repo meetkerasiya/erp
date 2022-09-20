@@ -24,7 +24,7 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  end_data: {
+  end_date: {
     type: String,
     required: true,
   },
@@ -43,7 +43,7 @@ const eventSchema = new mongoose.Schema({
   report: {
     type: String,
     //type: Blob,
-    required: true,
+    //required: true,
   },
 });
 const Event = mongoose.model("event", eventSchema);

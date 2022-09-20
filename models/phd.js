@@ -13,7 +13,7 @@ const phdSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  insitute: {
+  institute: {
     type: String,
     required: true,
   },

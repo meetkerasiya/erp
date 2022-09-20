@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const mongoose = require("mongoose");
 router.use(express.json());
-const research_and_dev = require("../models/research_and_dev");
+const Rnd = require("../models/research_and_dev");
 const auth = require("../middleware/auth");
 
 router.post("/", [auth], async (req, res) => {
@@ -67,7 +67,7 @@ function validation(
     amount: Joi.string().required(),
     date: Joi.date().required(),
   });
-  return schema.valiamount({
+  return schema.validate({
     email: username,
     cordinator: cordinator,
     title: title,

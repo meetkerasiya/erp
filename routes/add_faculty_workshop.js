@@ -30,6 +30,7 @@ router.post("/", [auth], async (req, res) => {
       username: req.username,
       start_date: req.body.start_date,
       end_date: req.body.end_date,
+      expert: req.body.expert,
       title: req.body.title,
       type: req.body.type,
       funding_agency: req.body.funding_agency,

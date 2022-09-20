@@ -25,17 +25,6 @@ router.post("/", [auth], async (req, res) => {
     username: req.username,
   });
   if (check != null) {
-    /*
-        await Book.upfaculty_involvedOne({username : req.username},{
-            $set : 
-            { 
-                name: req.body.name,
-                phno: req.body.phno,
-                designation : req.body.designation,
-                faculty_involvedOfJoin : req.body.faculty_involvedOfJoin,
-                qualification : req.body.qualification
-            }
-        });*/
     res.status(409).send("This Work already exists");
   } else {
     let work = new Work({
@@ -59,7 +48,7 @@ function validation(username, details, client, client, cost, faculty_involved) {
     cost: Joi.string().required(),
     faculty_involved: Joi.string().required(),
   });
-  return schema.valifaculty_involved({
+  return schema.validate({
     email: username,
     details: details,
     client: client,

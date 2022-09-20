@@ -13,7 +13,7 @@ const tour = new mongoose.Schema({
     type: String,
     required: true,
   },
-  no_of_student: {
+  no_of_students: {
     type: String,
     required: true,
   },
