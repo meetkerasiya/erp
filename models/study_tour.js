@@ -17,6 +17,11 @@ const tour = new mongoose.Schema({
     type: String,
     required: true,
   },
+  is_deleted: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 const Tour = mongoose.model("study_tour", tour);
 

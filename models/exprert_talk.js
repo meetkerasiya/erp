@@ -21,6 +21,11 @@ const expertSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  is_deleted: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 const Expert = mongoose.model("expert_talk", expertSchema);
 

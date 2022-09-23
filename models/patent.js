@@ -26,6 +26,11 @@ const patentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  is_deleted: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 const Patent = mongoose.model("patent", patentSchema);
 

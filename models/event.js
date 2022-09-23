@@ -45,6 +45,11 @@ const eventSchema = new mongoose.Schema({
     //type: Blob,
     //required: true,
   },
+  is_deleted: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 const Event = mongoose.model("event", eventSchema);
 

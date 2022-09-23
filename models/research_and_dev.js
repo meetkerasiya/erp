@@ -25,6 +25,11 @@ const RDSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  is_deleted: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 const RD = mongoose.model("research_and_dev", RDSchema);
 

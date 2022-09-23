@@ -36,6 +36,11 @@ const facultyWorkshopSchema = new mongoose.Schema({
     type: [String],
     //require:true
   },
+  is_deleted: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 const Faculty_workshop = mongoose.model(
   "faculty_workshop",
