@@ -54,7 +54,7 @@ function validation(username, date, place, no_of_students, faculty_name) {
     date: Joi.date().required(),
     place: Joi.string().required(),
     no_of_students: Joi.string().required(),
-    faculty_name: Joi.string.required(),
+    faculty_name: Joi.string().required(),
   });
   return schema.validate({
     email: username,
