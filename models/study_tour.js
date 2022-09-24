@@ -13,6 +13,10 @@ const tour = new mongoose.Schema({
     type: String,
     required: true,
   },
+  faculty_name: {
+    type: String,
+    required: true,
+  },
   no_of_students: {
     type: String,
     required: true,

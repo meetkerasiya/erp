@@ -14,7 +14,8 @@ router.post("/", [auth], async (req, res) => {
     req.username,
     req.body.date,
     req.body.place,
-    req.body.no_of_students
+    req.body.no_of_students,
+    req.body.faculty_name
   );
   if (err) {
     return res.status(401).send(err.details[0].message);
@@ -39,6 +40,7 @@ router.post("/", [auth], async (req, res) => {
       date: req.body.date,
       place: req.body.place,
       no_of_students: req.body.no_of_students,
+      faculty_name: req.body.faculty_name,
     });
     study_tour = await study_tour.save();
     res.status(200).send("Data added successfully");
@@ -46,12 +48,13 @@ router.post("/", [auth], async (req, res) => {
   //res.status(201).json(user);
 });
 
-function validation(username, date, place, no_of_students) {
+function validation(username, date, place, no_of_students, faculty_name) {
   const schema = Joi.object({
     email: Joi.string().required(),
     date: Joi.date().required(),
     place: Joi.string().required(),
     no_of_students: Joi.string().required(),
+    faculty_name: Joi.string.required(),
   });
   return schema.validate({
     email: username,
@@ -59,6 +62,7 @@ function validation(username, date, place, no_of_students) {
     date: date,
     place: place,
     no_of_students: no_of_students,
+    faculty_name: faculty_name,
   });
 }
 module.exports = router;

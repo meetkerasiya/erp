@@ -18,7 +18,7 @@ const workSchema = new mongoose.Schema({
     required: true,
   },
   faculty_involved: {
-    type: [String],
+    type: String,
     required: true,
   },
   is_deleted: {
