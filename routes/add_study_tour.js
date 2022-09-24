@@ -51,7 +51,7 @@ router.post("/", [auth], async (req, res) => {
 function validation(username, date, place, no_of_students, faculty_name) {
   const schema = Joi.object({
     email: Joi.string().required(),
-    date: Joi.date().required(),
+    date: Joi.string().required(),
     place: Joi.string().required(),
     no_of_students: Joi.string().required(),
     faculty_name: Joi.string().required(),
