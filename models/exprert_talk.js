@@ -5,6 +5,10 @@ const expertSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  faculty_name: {
+    type: String,
+    required: true,
+  },
   title_talk: {
     type: String,
     required: true,
