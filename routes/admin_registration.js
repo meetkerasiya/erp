@@ -25,7 +25,7 @@ router.post("/", cors(corsOptions), async (req, res) => {
     password: req.body.password,
   });
   if (check != null) {
-    return res.status(201).json({ success: true, msg: "user already exists" });
+    return res.status(201).json({ success: true, msg: "Admin already exists" });
     /*res.json({msg: "user alreay exists"});
         return;*/
     // return res.set(409).json({msg: "User already exists"});
@@ -44,7 +44,7 @@ router.post("/", cors(corsOptions), async (req, res) => {
     config.get("jwtPrivateKey")
   );
   res
-    .set(200)
+    .status(200)
     .header("x-auth-token", token)
     .send(JSON.stringify({ token: token }));
 

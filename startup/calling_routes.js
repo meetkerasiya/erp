@@ -27,6 +27,9 @@ const getrnd = require("../routes/get_reserch_dev");
 const gettour = require("../routes/get_study_tour");
 const getwork = require("../routes/get_work");
 const not_approved = require("../routes/not_approved_list");
+const admin_registration = require("../routes/admin_registration");
+const admin_login = require("../routes/admin_login");
+const get_profile = require("../routes/get_profile");
 module.exports = function (app) {
   app.use(express.json());
 
@@ -56,4 +59,7 @@ module.exports = function (app) {
   app.use("/addwork", addwork);
   app.use("/getwork", getwork);
   app.use("/not_approved_list", not_approved);
+  app.use("/admin_registration", admin_registration);
+  app.use("/admin_login", admin_login);
+  app.use("/getprofile", get_profile);
 };

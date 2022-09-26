@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const mongoose = require("mongoose");
 router.use(express.json());
-const User = require("../models/user");
+const User = require("../models/admin");
 
 router.post("/", async (req, res) => {
   const { err } = validation(req.body.username, req.body.password);
@@ -17,7 +17,9 @@ router.post("/", async (req, res) => {
     password: req.body.password,
   });
   if (check == null) {
-    return res.status(409).send("No user found with this username or password");
+    return res
+      .status(409)
+      .send("No Admin found with this username or password");
   } else {
     if (check.admin_approval) {
       const token = jwt.sign(
