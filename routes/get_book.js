@@ -7,7 +7,7 @@ const Book = require("../models/book_publish");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  Book.find({}, (err, result) => {
+  Book.find({ is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {

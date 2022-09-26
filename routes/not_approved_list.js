@@ -3,11 +3,11 @@ const router = express.Router();
 const mongoose = require("mongoose");
 router.use(express.json());
 const config = require("config");
-const Expert = require("../models/exprert_talk");
+const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  Expert.find({ is_deleted: false }, (err, result) => {
+  User.find({ admin_approval: false, is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {
@@ -17,4 +17,5 @@ router.post("/", [auth], async (req, res) => {
     }
   });
 });
+
 module.exports = router;

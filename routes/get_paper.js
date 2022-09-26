@@ -7,7 +7,7 @@ const Paper = require("../models/paper");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  const papers = Paper.find({}, (err, result) => {
+  const papers = Paper.find({ is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {

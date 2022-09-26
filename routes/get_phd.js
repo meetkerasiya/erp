@@ -7,7 +7,7 @@ const Phd = require("../models/phd");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  Phd.find({}, (err, result) => {
+  Phd.find({ is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {

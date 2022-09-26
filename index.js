@@ -30,7 +30,7 @@ const getphd = require("./routes/get_phd");
 const getrnd = require("./routes/get_reserch_dev");
 const gettour = require("./routes/get_study_tour");
 const getwork = require("./routes/get_work");
-
+const not_approved = require("./routes/not_approved_list");
 var cors = require("cors");
 app.use(cors());
 //cors
@@ -70,7 +70,7 @@ app.use("/addtour", addtour);
 app.use("/gettour", gettour);
 app.use("/addwork", addwork);
 app.use("/getwork", getwork);
-
+app.use("/not_approved_list", not_approved);
 var corsOptions = {
   origin: "http://localhost:3000",
   optionsSuccessStatus: 200,

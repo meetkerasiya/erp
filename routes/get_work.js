@@ -7,7 +7,7 @@ const Work = require("../models/work");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  Work.find({}, (err, result) => {
+  Work.find({ is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {

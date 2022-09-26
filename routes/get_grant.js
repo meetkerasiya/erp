@@ -7,7 +7,7 @@ const Grant = require("../models/grant");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  Grant.find({}, (err, result) => {
+  Grant.find({ is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {

@@ -7,7 +7,7 @@ const Patent = require("../models/patent");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  Patent.find({}, (err, result) => {
+  Patent.find({ is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {

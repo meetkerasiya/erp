@@ -7,7 +7,7 @@ const Workshop = require("../models/faculty_workshop");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 router.post("/", [auth], async (req, res) => {
-  Workshop.find({}, (err, result) => {
+  Workshop.find({ is_deleted: false }, (err, result) => {
     if (!err) {
       return res.status(200).send(result);
     } else {
