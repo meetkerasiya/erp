@@ -30,6 +30,7 @@ const not_approved = require("../routes/not_approved_list");
 const admin_registration = require("../routes/admin_registration");
 const admin_login = require("../routes/admin_login");
 const get_profile = require("../routes/get_profile");
+const delete_paper = require("../routes/delete_paper");
 module.exports = function (app) {
   app.use(express.json());
 
@@ -62,4 +63,5 @@ module.exports = function (app) {
   app.use("/admin_registration", admin_registration);
   app.use("/admin_login", admin_login);
   app.use("/getprofile", get_profile);
+  app.use("/deletepaper", delete_paper);
 };
