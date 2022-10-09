@@ -5,13 +5,13 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const mongoose = require("mongoose");
 router.use(express.json());
-const Paper = require("../models/paper");
+const Phd = require("../models/phd");
 const auth = require("../middleware/auth");
 
 router.post("/", [auth], async (req, res) => {
   //console.log(req.username);
-  const check = await Paper.findByIdAndDelete({ _id: req.body.id }).then(
-    res.status(200).send("Paper deleted successfully")
+  const check = await Phd.findByIdAndDelete({ _id: req.body.id }).then(
+    res.status(200).send("Phd deleted successfully")
   );
 });
 module.exports = router;
