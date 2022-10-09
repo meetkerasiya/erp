@@ -31,6 +31,16 @@ const admin_registration = require("../routes/admin_registration");
 const admin_login = require("../routes/admin_login");
 const get_profile = require("../routes/get_profile");
 const delete_paper = require("../routes/delete_paper");
+const delete_book = require("../routes/delete_book");
+const delete_event = require("../routes/delete_event");
+const delete_expert_talk = require("../routes/delete_expert_talk");
+const delete_faculty_workshop = require("../routes/delete_faculty_workshop");
+const delete_grant = require("../routes/delete_grant");
+const delete_patent = require("../routes/delete_patent");
+const delete_phd = require("../routes/delete_phd");
+const delete_rnd = require("../routes/delete_research_de");
+const delete_tour = require("../routes/delete_study_tour");
+const delete_work = require("../routes/delete_work");
 module.exports = function (app) {
   app.use(express.json());
 
@@ -63,5 +73,15 @@ module.exports = function (app) {
   app.use("/admin_registration", admin_registration);
   app.use("/admin_login", admin_login);
   app.use("/getprofile", get_profile);
-  app.use("/deletepaper", delete_paper);
+  app.use("/delete_paper", delete_paper);
+  app.use("/delete_book", delete_book);
+  app.use("/delete_event", delete_event);
+  app.use("/delete_expert_talk", delete_expert_talk);
+  app.use("/delete_faculty_workshop", delete_faculty_workshop);
+  app.use("/delete_grant", delete_grant);
+  app.use("/delete_patent", delete_patent);
+  app.use("/delete_phd", delete_phd);
+  app.use("/delete_rnd", delete_rnd);
+  app.use("/delete_tour", delete_tour);
+  app.use("/delete_work", delete_work);
 };
