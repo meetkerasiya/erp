@@ -17,7 +17,9 @@ router.post("/", [auth], async (req, res) => {
     req.body.expert,
     req.body.title,
     req.body.type,
-    req.body.funding_agency
+    req.body.funding_agency,
+    req.body.certificate,
+    req.body.report
   );
   if (err) {
     return res.status(401).send(err.details[0].message);
@@ -34,6 +36,8 @@ router.post("/", [auth], async (req, res) => {
       title: req.body.title,
       type: req.body.type,
       funding_agency: req.body.funding_agency,
+      certificate: req.body.certificate,
+      report: req.body.report,
     });
     faculty_workshop = await faculty_workshop.save();
     res.status(200).send("Data added successfully");
@@ -48,7 +52,9 @@ function validation(
   expert,
   title,
   type,
-  funding_agency
+  funding_agency,
+  certificate,
+  report
 ) {
   const schema = Joi.object({
     email: Joi.string().required(),
@@ -57,6 +63,8 @@ function validation(
     title: Joi.string().required(),
     type: Joi.string().required(),
     funding_agency: Joi.string(),
+    certificate: Joi.string(),
+    report: Joi.string(),
   });
   return schema.validate({
     email: username,
@@ -66,6 +74,8 @@ function validation(
     title: title,
     type: type,
     funding_agency: funding_agency,
+    certificate: certificate,
+    report: report,
   });
 }
 module.exports = router;

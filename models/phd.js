@@ -6,6 +6,7 @@ const phdSchema = new mongoose.Schema({
     required: true,
   },
   title: {
+    //degree: phd,btech,mtech
     type: String,
     required: true,
   },

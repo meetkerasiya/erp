@@ -8,48 +8,56 @@ const paperSchema = new mongoose.Schema({
   type1: {
     //national or international
     type: String,
-    required: true,
+    //required: true,
   },
 
   title: {
     type: String,
-    required: true,
+    // required: true,
   },
   volume: {
     type: String,
-    required: true,
+    //required: true,
   },
 
   issue: {
     type: String,
-    required: true,
+    // required: true,
   },
   year: {
     type: String,
-    required: true,
+    // required: true,
   },
   author: {
     type: [String],
-    required: true,
+    // required: true,
   },
   type: {
     //conference or jornoul
     type: String,
-    required: true,
+    //required: true,
   },
   indexing: {
     // scopus / ugc / wos(web of science) / other
     type: String,
-    required: true,
+    //required: true,
   },
   ISBN: {
     type: String,
-    required: true,
+    //required: true,
   },
   is_deleted: {
     type: Boolean,
     required: false,
     default: false,
+  },
+  certificate: {
+    type: String,
+    required: false,
+  },
+  paper: {
+    type: String,
+    required: false,
   },
 });
 const Paper = mongoose.model("paper_published", paperSchema);

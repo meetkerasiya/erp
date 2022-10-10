@@ -6,6 +6,7 @@ const facultyWorkshopSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  //event attended
   /*faculty:{
         type: String,
         required:true
@@ -35,6 +36,14 @@ const facultyWorkshopSchema = new mongoose.Schema({
   funding_agency: {
     type: [String],
     //require:true
+  },
+  certificate: {
+    type: String,
+    required: false,
+  },
+  report: {
+    type: String,
+    required: false,
   },
   is_deleted: {
     type: Boolean,

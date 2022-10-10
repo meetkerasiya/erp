@@ -19,7 +19,9 @@ router.post("/", [auth], async (req, res) => {
   if (err) {
     return res.status(401).send(err.details[0].message);
   }
-  const check = await Phd.findOne({ title: req.body.title });
+  const check = await Phd.findOne({
+    date_of_completion: req.body.date_of_completion,
+  });
   if (check != null) {
     /*
         await Book.updateOne({username : req.username},{

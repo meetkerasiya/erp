@@ -20,7 +20,11 @@ router.post("/", [auth], async (req, res) => {
     req.body.no_of_participants,
     req.body.sponsor,
     req.body.for_whome,
-    req.body.report
+    req.body.report,
+    req.body.cost,
+    req.body.approval_letter,
+    req.body.attendence_sheet,
+    req.body.photo
   );
   if (err) {
     return res.status(401).send(err.details[0].message);
@@ -40,6 +44,10 @@ router.post("/", [auth], async (req, res) => {
       sponsor: req.body.sponsor,
       for_whome: req.body.for_whome,
       report: req.body.report,
+      cost: req.body.cost,
+      approval_letter: req.body.approval_letter,
+      attendence_sheet: req.body.attendence_sheet,
+      photo: req.body.photo,
     });
     event = await event.save();
     res.status(200).send("Data added successfully");
@@ -57,7 +65,11 @@ function validation(
   no_of_participants,
   sponsor,
   for_whome,
-  report
+  report,
+  cost,
+  approval_letter,
+  attendence_sheet,
+  photo
 ) {
   const schema = Joi.object({
     email: Joi.string().required(),
@@ -70,6 +82,10 @@ function validation(
     sponsor: Joi.string(),
     for_whome: Joi.string().required(),
     report: Joi.string(),
+    cost: Joi.string().required(),
+    approval_letter: Joi.string(),
+    attendence_sheet: Joi.string(),
+    photo: Joi.string(),
   });
   return schema.validate({
     email: username,
@@ -82,6 +98,10 @@ function validation(
     sponsor: sponsor,
     for_whome: for_whome,
     report: report,
+    cost: cost,
+    approval_letter: approval_letter,
+    attendence_sheet: attendence_sheet,
+    photo: photo,
   });
 }
 module.exports = router;

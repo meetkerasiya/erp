@@ -20,7 +20,9 @@ router.post("/", [auth], async (req, res) => {
     req.body.author,
     req.body.type,
     req.body.indexing,
-    req.body.ISBN
+    req.body.ISBN,
+    req.body.cetificate,
+    req.body.paper
   );
   if (err) {
     return res.status(401).send(err.details[0].message);
@@ -51,6 +53,8 @@ router.post("/", [auth], async (req, res) => {
       type: req.body.type,
       indexing: req.body.indexing,
       ISBN: req.body.ISBN,
+      certificate: req.body.cetificate,
+      paper: req.body.paper,
     });
     paper = await paper.save();
     res.status(200).send("Data added successfully");
@@ -68,7 +72,9 @@ function validation(
   author,
   type,
   indexing,
-  ISBN
+  ISBN,
+  certificate,
+  paper
 ) {
   const schema = Joi.object({
     email: Joi.string().required(),
@@ -81,6 +87,8 @@ function validation(
     type: Joi.string().required(),
     indexing: Joi.string().required(),
     ISBN: Joi.string().required(),
+    certificate: Joi.string(),
+    paper: Joi.string(),
   });
   return schema.validate({
     email: username,
@@ -93,6 +101,8 @@ function validation(
     type: type,
     indexing: indexing,
     ISBN: ISBN,
+    certificate: certificate,
+    paper: paper,
   });
 }
 module.exports = router;

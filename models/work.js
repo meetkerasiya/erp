@@ -21,6 +21,10 @@ const workSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  consulty_letter: {
+    type: String,
+    required: false,
+  },
   is_deleted: {
     type: Boolean,
     required: false,

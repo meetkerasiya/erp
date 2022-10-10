@@ -28,6 +28,10 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cost: {
+    type: String,
+    required: true,
+  },
   no_of_participants: {
     type: Number,
     required: true,
@@ -36,6 +40,7 @@ const eventSchema = new mongoose.Schema({
     type: [String],
   },
   for_whome: {
+    //audience
     //faculty or student
     type: String,
     required: true,
@@ -45,6 +50,19 @@ const eventSchema = new mongoose.Schema({
     //type: Blob,
     //required: true,
   },
+  approval_letter: {
+    type: String,
+    required: false,
+  },
+  attendence_sheet: {
+    type: String,
+    required: false,
+  },
+  photo: {
+    type: String,
+    required: false,
+  },
+
   is_deleted: {
     type: Boolean,
     required: false,

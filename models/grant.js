@@ -5,6 +5,10 @@ const grantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    requires: true,
+  },
   cordinator: {
     type: String,
     required: true,
@@ -20,6 +24,22 @@ const grantSchema = new mongoose.Schema({
   amount: {
     type: String,
     required: true,
+  },
+  approval_letter: {
+    type: String,
+    required: false,
+  },
+  completion_letter: {
+    type: String,
+    required: false,
+  },
+  start_date: {
+    type: String,
+    required: ture,
+  },
+  end_date: {
+    type: String,
+    required: ture,
   },
   is_deleted: {
     type: Boolean,

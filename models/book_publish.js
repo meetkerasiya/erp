@@ -16,6 +16,10 @@ const bookSchema = new mongoose.Schema({
   co_author: {
     type: [String],
   },
+  publication_date: {
+    type: String,
+    require: true,
+  },
   publisher: {
     type: String,
     required: true,

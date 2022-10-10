@@ -17,7 +17,9 @@ router.post("/", [auth], async (req, res) => {
     req.body.title,
     req.body.date,
     req.body.vanue,
-    req.body.faculty_name
+    req.body.faculty_name,
+    req.body.initiation_letter,
+    req.body.appreciation_letter
   );
   if (err) {
     return res.status(401).send(err.details[0].message);
@@ -31,8 +33,10 @@ router.post("/", [auth], async (req, res) => {
       title_talk: req.body.title_talk,
       title_program: req.body.title_program,
       date: req.body.date,
-      vanue: req.body.vanue,
+      venue: req.body.venue,
       faculty_name: req.body.faculty_name,
+      initiation_letter: req.body.initiation_letter,
+      appreciation_letter: req.body.appreciation_letter,
     });
     expert = await expert.save();
     res.status(200).send("Data added successfully");
@@ -47,7 +51,9 @@ function validation(
   title,
   date,
   vanue,
-  faculty_name
+  faculty_name,
+  initiation_letter,
+  appreciation_letter
 ) {
   const schema = Joi.object({
     email: Joi.string().required(),
@@ -56,6 +62,8 @@ function validation(
     date: Joi.string().required(),
     vanue: Joi.string().required(),
     faculty_name: Joi.string().required(),
+    initiation_letter: Joi.string(),
+    appreciation_letter: Joi.string(),
   });
   return schema.validate({
     email: username,
@@ -65,6 +73,8 @@ function validation(
     date: date,
     vanue: vanue,
     faculty_name: faculty_name,
+    initiation_letter: initiation_letter,
+    appreciation_letter: appreciation_letter,
   });
 }
 module.exports = router;

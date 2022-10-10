@@ -15,6 +15,7 @@ router.post("/", [auth], async (req, res) => {
     req.body.title,
     req.body.author,
     req.body.co_author,
+    req.body.publication_date,
     req.body.publisher,
     req.body.ISBN
   );
@@ -43,6 +44,7 @@ router.post("/", [auth], async (req, res) => {
       co_author: req.body.co_author,
       publisher: req.body.publisher,
       ISBN: req.body.ISBN,
+      publication_date: req.body.publication_date,
     });
     book = await book.save();
     res.status(200).send("Data added successfully");
@@ -56,6 +58,7 @@ function validation(username, title, author, co_author, publisher, isbn) {
     title: Joi.string().required(),
     author: Joi.string().required(),
     co_author: Joi.string(),
+    publication_date: Joi.string().required(),
     publisher: Joi.string().required(),
     isbn: Joi.string().required(),
   });
@@ -66,6 +69,7 @@ function validation(username, title, author, co_author, publisher, isbn) {
     co_author: co_author,
     publisher: publisher,
     isbn: isbn,
+    publication_date: publication_date,
   });
 }
 module.exports = router;

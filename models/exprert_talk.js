@@ -1,6 +1,7 @@
 const { number } = require("joi");
 const mongoose = require("mongoose");
 const expertSchema = new mongoose.Schema({
+  //outside interactions
   username: {
     type: String,
     required: true,
@@ -21,9 +22,17 @@ const expertSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  vanue: {
+  venue: {
     type: String,
     required: true,
+  },
+  initiation_letter: {
+    type: String,
+    required: false,
+  },
+  appreciation_letter: {
+    type: String,
+    required: false,
   },
   is_deleted: {
     type: Boolean,
