@@ -10,8 +10,9 @@ const auth = require("../middleware/auth");
 
 router.post("/", [auth], async (req, res) => {
   //console.log(req.username);
-  const check = await Patent.findByIdAndDelete({ _id: req.body.id }).then(
-    res.status(200).send("Patent deleted successfully")
-  );
+  const check = await Patent.findOneAndDelete({ _id: req.body.id })
+
+    .then(res.status(200).send("Patent deleted successfully"))
+    .catch(console.log("some error occured"));
 });
 module.exports = router;

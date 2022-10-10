@@ -10,8 +10,9 @@ const auth = require("../middleware/auth");
 
 router.post("/", [auth], async (req, res) => {
   //console.log(req.username);
-  const check = await Faculty_Workshop.findByIdAndDelete({
-    _id: req.body.id,
-  }).then(res.status(200).send("Faculty_Workshop deleted successfully"));
+  const check = await Faculty_Workshop.findOneAndDelete({ _id: req.body.id })
+
+    .then(res.status(200).send("Workshop deleted successfully"))
+    .catch(console.log("some error occured"));
 });
 module.exports = router;

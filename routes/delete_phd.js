@@ -10,8 +10,9 @@ const auth = require("../middleware/auth");
 
 router.post("/", [auth], async (req, res) => {
   //console.log(req.username);
-  const check = await Phd.findByIdAndDelete({ _id: req.body.id }).then(
-    res.status(200).send("Phd deleted successfully")
-  );
+  const check = await Phd.findOneAndDelete({ _id: req.body.id })
+
+    .then(res.status(200).send("Qualification deleted successfully"))
+    .catch(console.log("some error occured"));
 });
 module.exports = router;

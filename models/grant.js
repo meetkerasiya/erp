@@ -35,11 +35,11 @@ const grantSchema = new mongoose.Schema({
   },
   start_date: {
     type: String,
-    required: ture,
+    required: true,
   },
   end_date: {
     type: String,
-    required: ture,
+    required: true,
   },
   is_deleted: {
     type: Boolean,
