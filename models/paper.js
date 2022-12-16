@@ -33,7 +33,7 @@ const paperSchema = new mongoose.Schema({
     // required: true,
   },
   type: {
-    //conference or jornoul
+    //conference or journal
     type: String,
     //required: true,
   },

@@ -5,6 +5,7 @@ const workSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  //consultancy work
   details: {
     type: String,
     required: true,

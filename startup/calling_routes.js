@@ -26,7 +26,7 @@ const getphd = require("../routes/get_phd");
 const getrnd = require("../routes/get_reserch_dev");
 const gettour = require("../routes/get_study_tour");
 const getwork = require("../routes/get_work");
-const not_approved = require("../routes/not_approved_list");
+
 const admin_registration = require("../routes/admin_registration");
 const admin_login = require("../routes/admin_login");
 const get_profile = require("../routes/get_profile");
@@ -41,6 +41,11 @@ const delete_phd = require("../routes/delete_phd");
 const delete_rnd = require("../routes/delete_research_de");
 const delete_tour = require("../routes/delete_study_tour");
 const delete_work = require("../routes/delete_work");
+
+const not_approved = require("../routes/not_approved_list");
+const not_approved_admin = require("../routes/not_approved_admin_list");
+const add_approval = require("../routes/add_approval");
+const add_approval_admin = require("../routes/add_admin_approval");
 module.exports = function (app) {
   app.use(express.json());
 
@@ -69,7 +74,7 @@ module.exports = function (app) {
   app.use("/gettour", gettour);
   app.use("/addwork", addwork);
   app.use("/getwork", getwork);
-  app.use("/not_approved_list", not_approved);
+
   app.use("/admin_registration", admin_registration);
   app.use("/admin_login", admin_login);
   app.use("/getprofile", get_profile);
@@ -84,4 +89,8 @@ module.exports = function (app) {
   app.use("/delete_rnd", delete_rnd);
   app.use("/delete_tour", delete_tour);
   app.use("/delete_work", delete_work);
+  app.use("/not_approved_list", not_approved);
+  app.use("/not_approved_admin_list", not_approved_admin);
+  app.use("/add_approval", add_approval);
+  app.use("add_admin_approval", add_approval_admin);
 };
